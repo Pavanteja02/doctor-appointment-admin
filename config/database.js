@@ -72,10 +72,15 @@ module.exports = ({ env }) => {
     },
     sqlite: {
       connection: {
-        filename: path.join(
+        // filename: path.join(
+        //   __dirname,
+        //   '..',
+        //   env('DATABASE_FILENAME', '.tmp/data.db')
+        // ),
+        filename: env('DATABASE_FILENAME',path.join(
           __dirname,
           '..',
-          env('DATABASE_FILENAME', '.tmp/data.db')
+           '.tmp/data.db')
         ),
       },
       useNullAsDefault: true,
